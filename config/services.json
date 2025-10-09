@@ -4,12 +4,23 @@
       "id": "cloudflare-1",
       "name": "CloudFlare 优选",
       "provider": "cloudflare",
-      "description": "CloudFlare CDN 优选服务，提供全球加速",
+      "description": "CloudFlare 单IPv4版",
       "status": "active",
-      "optimizedIPs": ["this-is-the-preferred-free-option.if-you-paid.youve-been-scammed.本优选免费.你如果付费的你被骗了.cf.cnae.top", "this-is-the-preferred-free-option.if-you-paid.youve-been-scammed.本优选免费.你如果付费的你被骗了.cloudflare.byoip.top"],
+      "optimizedIPs": ["*.cloudflare.byoip.top","*.cloudflare.cnae.top"],
       "nodeStatus": "online",
       "responseTime": 70,
       "tags": ["全球加速", "高可用"]
+    },
+    {
+      "id": "cloudflare-1",
+      "name": "CloudFlare 优选",
+      "provider": "cloudflare",
+      "description": "CloudFlare 带IPv6版",
+      "status": "active",
+      "optimizedIPs": ["4-6-this-is-the-preferred-free-option.if-you-paid.youve-been-scammed.本优选免费.你如果付费的你被骗了.cf.cnae.top"],
+      "nodeStatus": "online",
+      "responseTime": 75,
+      "tags": ["全球加速", "双栈"]
     },
     {
       "id": "edgeone-1",

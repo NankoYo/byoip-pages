@@ -1,7 +1,15 @@
 {
   "sponsors": [
     {
-      "id": "sponsor-1",
+      "id": "sponsor-3",
+      "name": "南柯一梦",
+      "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3282380996&spec=0",
+      "description": "NB奥老铁，没毛病支持了",
+      "website": "",
+      "amount": "¥6.66"
+    },
+    {
+      "id": "sponsor-2",
       "name": "･ᴗ･ 7710",
       "logo": "https://letteravatar.com/s/avatar.png?text=7&round=10%25&font=Courier%20Prime",
       "description": "老铁666",
@@ -9,7 +17,7 @@
       "amount": "¥36.6"
     },
     {
-      "id": "sponsor-2",
+      "id": "sponsor-1",
       "name": "蜜蜂QWQ",
       "logo": "https://cdn.mfawa.top/image/logo.svg",
       "description": "加油！",
