@@ -1,18 +1,32 @@
 {
-  "partners": [
-    {
-      "id": "partner-1",
-      "name": "fishcpy",
-      "logo": "https://www.fis.ink/img/logo_c.png",
-      "description": "cloudflare 优选维护者",
-      "website": "https://www.fis.ink"
-    },
-    {
-      "id": "partner-2",
-      "name": "蜜蜂QWQ",
-      "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3979158171&spec=0",
-      "description": "vercel、netlify、edgeone 优选维护者",
-      "website": "https://imbee.top"
-    }
-  ]
+    "partners": [
+        {
+            "id": "partner-1",
+            "name": "诗婷",
+            "logo": "https://gravatar.nakeu.cn/avatar/13f4fce9d4994d742a0ce7d98ab99600?size=256&format=webp",
+            "description": "首席执行官",
+            "website": "https://www.nakeu.cn"
+        },
+        {
+            "id": "partner-2",
+            "name": "Movie.",
+            "logo": "https://gravatar.nakeu.cn/avatar/32f0d822990973d50bce234914d92e1c?size=256&format=webp",
+            "description": "解决方案架构师",
+            "website": "https://www.nakeu.cn"
+        },
+        {
+            "id": "partner-3",
+            "name": "雾里看花",
+            "logo": "https://gravatar.nakeu.cn/avatar/f272e4de414469dd4e6026304240d13e?size=256&format=webp",
+            "description": "技术总监",
+            "website": "https://imbee.top"
+        },
+        {
+            "id": "partner-4",
+            "name": "Slient.",
+            "logo": "https://gravatar.nakeu.cn/avatar/80f25b7ef503f2f7d83955025acdde05?size=256&format=webp",
+            "description": "安全专家",
+            "website": "https://www.nakeu.cn"
+        }
+    ]
 }

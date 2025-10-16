@@ -1,28 +1,20 @@
 {
   "sponsors": [
     {
-      "id": "sponsor-3",
-      "name": "南柯一梦",
-      "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3282380996&spec=0",
-      "description": "NB奥老铁，没毛病支持了",
-      "website": "",
-      "amount": "¥6.66"
-    },
-    {
       "id": "sponsor-2",
-      "name": "･ᴗ･ 7710",
-      "logo": "https://letteravatar.com/s/avatar.png?text=7&round=10%25&font=Courier%20Prime",
-      "description": "老铁666",
+      "name": "Stewie",
+      "logo": "http://q4.qlogo.cn/headimg_dl?dst_uin=431738813&spec=640",
+      "description": "已加密",
       "website": "",
-      "amount": "¥36.6"
+      "amount": "¥88.8"
     },
     {
       "id": "sponsor-1",
-      "name": "蜜蜂QWQ",
-      "logo": "https://cdn.mfawa.top/image/logo.svg",
-      "description": "加油！",
-      "website": "https://imbee.top",
-      "amount": "¥10"
+      "name": "XiaoYi",
+      "logo": "https://thirdqq.qlogo.cn/g?b=sdk&k=JQsY5FKTnR4RxVJCOQKicpg&s=640&t=1666728920%22%7D)",
+      "description": "已加密",
+      "website": "",
+      "amount": "$100"
     }
   ]
 }
