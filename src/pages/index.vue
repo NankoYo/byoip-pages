@@ -3,9 +3,9 @@
     
       <!-- 标题部分 -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-chinese">NB 优选服务</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-chinese">南科前端服务</h1>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto font-chinese">
-          CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务
+          南科北上自建前端镜像状态监测服务
         </p>  
         
         <!-- 提示 -->
@@ -84,8 +84,8 @@
 
 // 使用响应式文本适配
 const { finalText, textClasses } = useResponsiveText({
-  zh: '本优选免费，你如果付费的你被骗了',
-  en: 'This is the preferred free option. If you paid, you\'ve been scammed.'
+  zh: '项目无维护提前通知均会稳定运行',
+  en: ''
 }, {
   maxLength: 100,
   breakpoint: 768
@@ -117,11 +117,11 @@ const maintenanceServicesCount = computed(() => {
 })
 
 useHead({
-  title: 'NB 优选服务 - 首页',
+  title: '南科前端服务 - 首页',
   meta: [
     {
       name: 'description',
-      content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务'
+      content: '南科北上自建镜像状态监测服务'
     }
   ]
 })
