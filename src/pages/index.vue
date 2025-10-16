@@ -117,7 +117,7 @@ const maintenanceServicesCount = computed(() => {
 })
 
 useHead({
-  title: '南科前端服务 - 首页',
+  title: '南科静态分发 - 首页',
   meta: [
     {
       name: 'description',
