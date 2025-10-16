@@ -46,7 +46,7 @@ import { ref, onMounted } from 'vue'
 
 // 页面标题
 useHead({
-  title: '隐私政策 - 南科前端分发',
+  title: '隐私政策 - 南科静态分发',
   meta: [
     { name: 'description', content: '南科前端资源分发服务隐私政策，包含信息收集、使用和保护措施' }
   ]
