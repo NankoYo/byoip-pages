@@ -52,7 +52,7 @@
       "status": "active",
       "optimizedIPs": ["gravatar.nakeu.cn"],
       "nodeStatus": "online",
-      "responseTime": 62,
+      "responseTime": 43,
       "tags": ["图片优化", "融合云", "集群服务", "全球加速"]
     },
         {
@@ -63,7 +63,7 @@
       "status": "active",
       "optimizedIPs": ["i.nakeu.cn"],
       "nodeStatus": "online",
-      "responseTime": 62,
+      "responseTime": 56,
       "tags": ["图片优化", "融合云", "集群服务", "全球加速"]
     },
         {
@@ -74,7 +74,7 @@
       "status": "active",
       "optimizedIPs": ["gravatar.nakeu.cn"],
       "nodeStatus": "online",
-      "responseTime": 62,
+      "responseTime": 63,
       "tags": ["图片优化", "融合云", "集群服务", "全球加速"]
     },
         {
@@ -85,7 +85,7 @@
       "status": "active",
       "optimizedIPs": ["jsdelivr.nakeu.cn"],
       "nodeStatus": "online",
-      "responseTime": 62,
+      "responseTime": 55,
       "tags": ["静态优化", "融合云", "集群服务", "全球加速"]
     },
         {
@@ -96,7 +96,7 @@
       "status": "active",
       "optimizedIPs": ["static.nakeu.cn"],
       "nodeStatus": "online",
-      "responseTime": 62,
+      "responseTime": 41,
       "tags": ["图片优化", "融合云", "集群服务","静态优化"]
     }
   ]
