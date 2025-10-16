@@ -43,9 +43,9 @@ import { ref, onMounted } from 'vue'
 
 // 页面标题
 useHead({
-  title: '关于我们 - 南科前端分发',
+  title: '关于我们 - 南科静态分发',
   meta: [
-    { name: 'description', content: '南科前端分发项目介绍、使命和联系方式' }
+    { name: 'description', content: '南科静态分发项目介绍、使命和联系方式' }
   ]
 })
 </script>
