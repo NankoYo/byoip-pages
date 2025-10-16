@@ -76,14 +76,14 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'cdnjs、jsdelivr、Google前端库 等全球主流前端服务商的镜像分发 、节点状态监测服务' },
-        { name: 'keywords', content: 'CDN, IP优选, CloudFlare, jsdelivr, cdnjs, 前端加速, 节点监测' },
+        { name: 'keywords', content: 'CDN, CloudFlare, jsdelivr, cdnjs, 前端加速, 节点监测' },
         { name: 'author', content: '© 南科 前端分发' },
         { property: 'og:title', content: '© 南科 前端分发' },
-        { property: 'og:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
+        { property: 'og:description', content: 'CloudFlare、cdnjs、jsdeivr等全球主流云服务商的前端镜像分发、节点状态监测服务' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: '© NB 优选服务' },
-        { name: 'twitter:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' }
+        { name: 'twitter:title', content: '© 南科 前端分发' },
+        { name: 'twitter:description', content: 'CloudFlare、jsdelivr、cdnjs等全球主流云服务商的前端镜像分发、节点状态监测服务' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: 'https://cdn.nakeu.cn/favicon.png' },
@@ -101,15 +101,15 @@ export default defineNuxtConfig({
             const structuredData = {
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "NB 优选服务",
-              "description": "CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务",
+              "name": "南科 前端分发",
+              "description": "CCloudFlare、cdnjs、jsdelivr等全球主流云服务商的前端镜像分发、节点状态监测服务",
               "applicationCategory": "NetworkingApplication",
               "operatingSystem": "Web Browser",
             };
             
             const script = document.createElement('script');
             script.type = 'application/ld+json';
-            script.textContent = JSON.stringify(structuredData);
+            script.textContent = JSON.stringifstructuredDatata);
             document.head.appendChild(script);
           `,
           type: 'text/javascript'
