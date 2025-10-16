@@ -44,7 +44,7 @@
 
     <!-- 优选 IP 地址 -->
     <div class="mb-4">
-      <h4 class="text-sm font-medium text-gray-700 mb-2">优选 IP 地址:</h4>
+      <h4 class="text-sm font-medium text-gray-700 mb-2">服务域名:</h4>
       <div class="space-y-2">
         <div v-for="(ip, index) in service.optimizedIPs" :key="index" 
              class="flex items-center justify-between bg-gray-50 rounded px-3 py-2">
