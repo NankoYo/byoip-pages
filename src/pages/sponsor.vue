@@ -20,11 +20,11 @@
                 <h3 class="text-xl font-semibold mb-4 text-green-700">支付宝</h3>
                 <div class="bg-white rounded-lg p-6 shadow-sm">
                   <img 
-                    src="https://cdn.mfawa.top/image/icon/byoip-alipay.png" 
+                    src="https://cdn.nakeu.cn/public/cache/blog/posts/alipay.jpg" 
                     alt="支付宝收款码"
                     class="w-80 h-80 mx-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
                     loading="lazy"
-                    @click="openImageModal('https://cdn.mfawa.top/image/icon/byoip-alipay.png', '支付宝收款码')"
+                    @click="openImageModal('https://cdn.nakeu.cn/public/cache/blog/posts/alipay.jpg', '支付宝收款码')"
                   />
                   <p class="text-sm text-gray-600 mt-2">点击图片放大查看</p>
                 </div>
@@ -35,11 +35,11 @@
                 <h3 class="text-xl font-semibold mb-4 text-green-700">微信</h3>
                 <div class="bg-white rounded-lg p-6 shadow-sm">
                   <img 
-                    src="https://cdn.mfawa.top/image/icon/byoip-wechat.png" 
+                    src="https://cdn.nakeu.cn/public/cache/blog/posts/wechat.jpg" 
                     alt="微信赞助"
                     class="w-80 h-80 mx-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
                     loading="lazy"
-                    @click="openImageModal('https://cdn.mfawa.top/image/icon/byoip-wechat.png', '微信赞助')"
+                    @click="openImageModal('https://cdn.nakeu.cn/public/cache/blog/posts/wechat.jpg', '微信赞助')"
                   />
                   <p class="text-sm text-gray-600 mt-2">点击图片放大查看</p>
                 </div>
@@ -190,9 +190,9 @@ onMounted(() => {
 
 // 设置页面head
 useHead({
-  title: '赞助支持 - NB 优选服务',
+  title: '赞助支持 - 南科静态分发',
   meta: [
-    { name: 'description', content: '感谢所有赞助商对 NB 优选服务项目的大力支持，您的支持是我们持续改进和发展的动力' }
+    { name: 'description', content: '感谢所有赞助商对南科静态分发项目的大力支持，您的支持是我们持续改进和发展的动力' }
   ]
 })
 </script>
