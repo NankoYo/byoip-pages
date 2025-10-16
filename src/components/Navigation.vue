@@ -9,8 +9,8 @@
           @click="handleNavigation('/', $event)"
           class="navigation-logo"
         >
-          <img src="https://cdn.jsdmirror.com/gh/FrecklyComb1728/byoip-pages@main/src/assets/favicon.ico" alt="favicon" class="navigation-logo-img" />
-          NB 优选服务
+          <img src="https://cdn.nakeu.cn/favicon.png" alt="favicon" class="navigation-logo-img" />
+          南科前端分发
         </a>
         
         <!-- 导航链接 -->
