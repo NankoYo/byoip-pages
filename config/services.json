@@ -2,11 +2,11 @@
   "services": [
     {
       "id": "cloudflare-1",
-      "name": "CloudFlare 优选",
+      "name": "南科接口服务",
       "provider": "cloudflare",
-      "description": "CloudFlare 单IPv4版",
+      "description": "API",
       "status": "active",
-      "optimizedIPs": ["*.cloudflare.byoip.top","*.cloudflare.cnae.top"],
+      "optimizedIPs": ["api.nakeu.cn"],
       "nodeStatus": "online",
       "responseTime": 70,
       "tags": ["全球加速", "高可用"]
@@ -23,9 +23,9 @@
       "tags": ["全球加速", "双栈"]
     },
     {
-      "id": "edgeone-1",
+      "id": "cloudflare-1",
       "name": "EdgeOne 优选",
-      "provider": "edgeone",
+      "provider": "cloudflare",
       "description": "EdgeOne CDN 优选服务",
       "status": "active",
       "optimizedIPs": ["*.edgeone.byoip.top", "*.edgeone.cnae.top"],
