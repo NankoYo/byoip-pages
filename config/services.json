@@ -9,51 +9,95 @@
       "optimizedIPs": ["api.nakeu.cn"],
       "nodeStatus": "online",
       "responseTime": 70,
-      "tags": ["全球加速", "高可用"]
+      "tags": ["内部使用", "集群服务"]
     },
     {
       "id": "cloudflare-1",
-      "name": "CloudFlare 优选",
+      "name": "cdnjs 镜像分发",
       "provider": "cloudflare",
-      "description": "CloudFlare 带IPv6版",
+      "description": "全球镜像分发",
       "status": "active",
-      "optimizedIPs": ["4-6-this-is-the-preferred-free-option.if-you-paid.youve-been-scammed.本优选免费.你如果付费的你被骗了.cf.cnae.top"],
+      "optimizedIPs": ["cdnjs.nakeu.cn"],
       "nodeStatus": "online",
       "responseTime": 75,
-      "tags": ["全球加速", "双栈"]
+      "tags": ["全球加速", "集群服务","多节点"]
     },
     {
       "id": "cloudflare-1",
-      "name": "EdgeOne 优选",
+      "name": "内部静态资源分发",
       "provider": "cloudflare",
-      "description": "EdgeOne CDN 优选服务",
+      "description": "用于内部静态资源分发",
       "status": "active",
-      "optimizedIPs": ["*.edgeone.byoip.top", "*.edgeone.cnae.top"],
+      "optimizedIPs": ["cdn.nakeu.cn"],
       "nodeStatus": "online",
       "responseTime": 62,
-      "tags": ["Tencent", "全球优化"]
+      "tags": ["全球加速", "静态优化"]
     },
     {
-      "id": "netlify-1",
-      "name": "Netlify 优选",
-      "provider": "netlify",
-      "description": "Netlify CDN 优选服务",
+      "id": "cloudflare-1",
+      "name": "DNS解析托管",
+      "provider": "cloudflare",
+      "description": "需要邀请方可使用",
       "status": "active",
-      "optimizedIPs": ["*.netlify.byoip.top", "*.netlify.cnae.top"],
+      "optimizedIPs": ["dns.global.nakeu.cn"],
       "nodeStatus": "online",
       "responseTime": 52,
-      "tags": ["AWS", "全球优化"]
+      "tags": ["融合云", "全球加速", "集群服务"]
     },
     {
-      "id": "vercel-1",
-      "name": "Vercel 优选",
-      "provider": "vercel",
-      "description": "Vercel CDN 优选服务",
+      "id": "cloudflare-1",
+      "name": "Gravatar 镜像分发",
+      "provider": "cloudflare",
+      "description": "解决Gravatar的境内访问问题",
       "status": "active",
-      "optimizedIPs": ["*.vercel.byoip.top", "*.vercel.cnae.top"],
+      "optimizedIPs": ["gravatar.nakeu.cn"],
       "nodeStatus": "online",
       "responseTime": 62,
-      "tags": ["AWS", "全球优化"]
+      "tags": ["图片优化", "融合云", "集群服务", "全球加速"]
+    },
+        {
+      "id": "cloudflare-1",
+      "name": "图片资源 镜像分发",
+      "provider": "cloudflare",
+      "description": "解决图片资源分发问题",
+      "status": "active",
+      "optimizedIPs": ["i.nakeu.cn"],
+      "nodeStatus": "online",
+      "responseTime": 62,
+      "tags": ["图片优化", "融合云", "集群服务", "全球加速"]
+    },
+        {
+      "id": "cloudflare-1",
+      "name": "Gravatar 镜像分发",
+      "provider": "cloudflare",
+      "description": "解决Gravatar的境内访问问题",
+      "status": "active",
+      "optimizedIPs": ["gravatar.nakeu.cn"],
+      "nodeStatus": "online",
+      "responseTime": 62,
+      "tags": ["图片优化", "融合云", "集群服务", "全球加速"]
+    },
+        {
+      "id": "cloudflare-1",
+      "name": "jsdelivr 通用镜像",
+      "provider": "cloudflare",
+      "description": "解决jsdelivr的境内访问问题",
+      "status": "active",
+      "optimizedIPs": ["jsdelivr.nakeu.cn"],
+      "nodeStatus": "online",
+      "responseTime": 62,
+      "tags": ["静态优化", "融合云", "集群服务", "全球加速"]
+    },
+        {
+      "id": "cloudflare-1",
+      "name": "Static 分支",
+      "provider": "cloudflare",
+      "description": "解决内部静态资源归类混乱问题",
+      "status": "active",
+      "optimizedIPs": ["static.nakeu.cn"],
+      "nodeStatus": "online",
+      "responseTime": 62,
+      "tags": ["图片优化", "融合云", "集群服务","静态优化"]
     }
   ]
 }
