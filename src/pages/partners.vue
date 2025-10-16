@@ -4,7 +4,7 @@
       <div class="text-center mb-12">
         <h1 class="card-title text-4xl mb-6">技术合作伙伴</h1>
         <p class="card-description text-xl max-w-3xl mx-auto mb-8 text-gray-600">
-          感谢我们的技术合伙人在 NB 优选服务发展过程中提供的专业技术支持和宝贵建议
+          感谢我们的技术合伙人在南科前端资源分发的发展过程中提供专业技术支持和宝贵建议
         </p>
       </div>
 
@@ -55,9 +55,9 @@ const refresh = () => window.location.reload()
 
 // 设置页面head
 useHead({
-  title: '技术合伙人 - NB 优选服务',
+  title: '技术合伙人 - 南科前端资源分发',
   meta: [
-    { name: 'description', content: '感谢我们的技术合伙人在 NB 优选服务发展过程中提供的专业技术支持和宝贵建议' }
+    { name: 'description', content: '感谢我们的技术合伙人在南科前端资源分发发展过程中提供专业技术支持和宝贵建议' }
   ]
 })
 </script>
