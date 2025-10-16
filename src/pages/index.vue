@@ -52,7 +52,7 @@
           </div>
           <div class="bg-blue-50 rounded-lg p-6 text-center">
             <div class="text-2xl font-bold text-blue-600 font-cascadia">1000+</div>
-            <div class="text-sm text-blue-700">优选 IP 总数</div>
+            <div class="text-sm text-blue-700">服务项目总数</div>
           </div>
         </div>
 
