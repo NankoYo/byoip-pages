@@ -55,7 +55,7 @@ const refresh = () => window.location.reload()
 
 // 设置页面head
 useHead({
-  title: '技术合伙人 - 南科前端资源分发',
+  title: '技术合伙人 -南科静态分发',
   meta: [
     { name: 'description', content: '感谢我们的技术合伙人在南科前端资源分发发展过程中提供专业技术支持和宝贵建议' }
   ]
