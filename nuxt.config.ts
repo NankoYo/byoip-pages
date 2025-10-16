@@ -71,14 +71,14 @@ export default defineNuxtConfig({
   // 应用配置
   app: {
     head: {
-      title: 'NB 优选服务',
+      title: '南科北上前端分发',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
-        { name: 'keywords', content: 'CDN, IP优选, CloudFlare, Vercel, Netlify, 网络加速, 节点监测' },
-        { name: 'author', content: '© NB 优选服务' },
-        { property: 'og:title', content: '© NB 优选服务' },
+        { name: 'description', content: 'cdnjs、jsdelivr、Google前端库 等全球主流前端服务商的镜像分发 、节点状态监测服务' },
+        { name: 'keywords', content: 'CDN, IP优选, CloudFlare, jsdelivr, cdnjs, 前端加速, 节点监测' },
+        { name: 'author', content: '© 南科 前端分发' },
+        { property: 'og:title', content: '© 南科 前端分发' },
         { property: 'og:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
@@ -86,8 +86,8 @@ export default defineNuxtConfig({
         { name: 'twitter:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: 'https://cdn.jsdmirror.com/gh/FrecklyComb1728/byoip-pages@main/src/assets/favicon.ico' },
-        { rel: 'canonical', href: 'https://www.byoip.top' }
+        { rel: 'icon', type: 'image/x-icon', href: 'https://cdn.nakeu.cn/favicon.png' },
+        { rel: 'canonical', href: 'https://status.nankoyo.cn' }
       ],
       script: [
         { src: 'https://cdn.tailwindcss.com' },
