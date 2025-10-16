@@ -5,7 +5,7 @@
         <div class="max-w-4xl mx-auto">
           <h1 class="card-title text-4xl mb-6 text-center">赞助支持</h1>
           <p class="card-description text-xl max-w-3xl mx-auto mb-8 text-gray-600 text-center">
-            感谢所有赞助商对 NB 优选服务项目的大力支持，您的支持是我们持续改进和发展的动力
+            感谢所有赞助商对南科前端分发服务项目的大力支持，您的支持是我们持续改进和发展的动力
           </p>
           <h2 class="text-3xl font-bold text-center mb-8 font-cascadia text-green-600">
             支持我们
