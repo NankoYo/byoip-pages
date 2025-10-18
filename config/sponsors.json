@@ -1,6 +1,14 @@
 {
   "sponsors": [
     {
+      "id": "sponsor-4",
+      "name": "美速哥铁粉",
+      "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3638225108&spec=0",
+      "description": "支持！",
+      "website": "https://space.bilibili.com/3546721225279790",
+      "amount": "¥2.00"
+    },
+    {
       "id": "sponsor-3",
       "name": "南柯一梦",
       "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3282380996&spec=0",
@@ -14,7 +22,7 @@
       "logo": "https://letteravatar.com/s/avatar.png?text=7&round=10%25&font=Courier%20Prime",
       "description": "老铁666",
       "website": "",
-      "amount": "¥36.6"
+      "amount": "¥36.60"
     },
     {
       "id": "sponsor-1",
@@ -22,7 +30,7 @@
       "logo": "https://cdn.mfawa.top/image/logo.svg",
       "description": "加油！",
       "website": "https://imbee.top",
-      "amount": "¥10"
+      "amount": "¥10.00"
     }
   ]
 }
