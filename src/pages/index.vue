@@ -117,7 +117,7 @@ const maintenanceServicesCount = computed(() => {
 })
 
 useHead({
-  title: 'NB 优选服务 - 首页',
+  title: 'NB 优选服务 - 首页 | CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务',
   meta: [
     {
       name: 'description',
