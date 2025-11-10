@@ -1,7 +1,7 @@
 {
   "github": {
     "template": "https://{{mirror}}/gh/{{owner}}/{{repo}}@{{branch}}/{{path}}",
-    "mirror": "jsdelivr.topthink.com"
+    "mirror": "cdn.jsdmirror.com"
   },
   "npm": {
     "template": "https://{{mirror}}/npm/{{package}}@{{version}}/{{path}}",
