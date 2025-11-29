@@ -8,7 +8,6 @@
     @loaded="onContentLoaded"
     @content-visible="onContentVisible"
   >
-    <!-- 实际内容与渐显项目 -->
     <div class="content-grid">
       <div
         v-for="(item, index) in items"
@@ -17,7 +16,6 @@
         :style="{ animationDelay: `${index * 100}ms` }"
       >
         <slot name="item" :item="item" :index="index">
-          <!-- 默认项目模板 -->
           <div class="default-item">
             <h3 class="item-title font-cascadia">{{ item.title }}</h3>
             <p class="item-description font-mixed">{{ item.description }}</p>
@@ -61,7 +59,6 @@ const emit = defineEmits<{
   contentVisible: []
 }>()
 
-// 模拟加载延迟
 const internalLoading = ref(props.isLoading)
 
 onMounted(() => {
@@ -134,7 +131,6 @@ const onContentVisible = () => {
   line-height: 1.6;
 }
 
-/* 响应式调整 */
 @media (max-width: 640px) {
   .content-grid {
     grid-template-columns: 1fr;
@@ -150,7 +146,6 @@ const onContentVisible = () => {
   }
 }
 
-/* 减少运动支持 */
 @media (prefers-reduced-motion: reduce) {
   .fade-in-item {
     animation: none;

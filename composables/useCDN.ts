@@ -12,15 +12,10 @@ interface CDNManager {
 }
 
 export const useCDN = (): CDNManager => {
-  // 使用静态配置而不是异步加载
   const staticConfig = useCDNConfig()
   const config = ref<CDNMirrorConfig | null>(staticConfig.value)
   const loading = ref(false)
   const error = ref<string | null>(null)
-
-  /**
-   * 初始化配置 - 使用构建时注入的配置
-   */
   const loadConfig = async (): Promise<void> => {
     loading.value = true
     error.value = null
@@ -28,8 +23,6 @@ export const useCDN = (): CDNManager => {
     try {
       // 从静态配置获取
       config.value = staticConfig.value
-      
-      // 如果没有静态配置，使用默认配置
       if (!config.value) {
         config.value = {
           github: {
@@ -50,9 +43,6 @@ export const useCDN = (): CDNManager => {
     }
   }
 
-  /**
-   * github 模板
-   */
   const buildGithubUrl = (owner: string, repo: string, branch: string, path: string): string => {
     if (!config.value?.github) {
       throw new Error('GitHub CDN configuration not loaded')
@@ -68,9 +58,6 @@ export const useCDN = (): CDNManager => {
       .replace('{{path}}', path.startsWith('/') ? path.slice(1) : path)
   }
 
-  /**
-   * npm 模板
-   */
   const buildNpmUrl = (packageName: string, version: string, path: string): string => {
     if (!config.value?.npm) {
       throw new Error('npm CDN configuration not loaded')
@@ -85,32 +72,23 @@ export const useCDN = (): CDNManager => {
       .replace('{{path}}', path.startsWith('/') ? path.slice(1) : path)
   }
 
-  /**
-   * 更新 GitHub / npm 的镜像
-   */
   const updateMirror = async (type: 'github' | 'npm', mirror: string): Promise<void> => {
     if (!config.value) {
       throw new Error('CDN configuration not loaded')
     }
 
-    // 验证镜像是否在可用列表中
     const availableMirrors = getAvailableMirrors()
     if (availableMirrors.length > 0 && !availableMirrors.includes(mirror)) {
       throw new Error(`Invalid mirror: ${mirror}. Available mirrors: ${availableMirrors.join(', ')}`)
     }
 
-    // 更新配置
     config.value[type].mirror = mirror
   }
 
-  /**
-   * 获取可用镜像列表
-   */
   const getAvailableMirrors = (): string[] => {
     return config.value?.alternatives?.mirrors || []
   }
 
-  // 初始化时设置配置
   onMounted(() => {
     if (!config.value) {
       loadConfig()

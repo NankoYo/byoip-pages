@@ -12,19 +12,15 @@
         />
       </div>
       
-
       
-      <!-- 合作伙伴名称 -->
       <h3 class="text-lg font-semibold text-center mb-2 font-cascadia">
         {{ partner.name }}
       </h3>
       
-      <!-- 合作伙伴描述 -->
       <p class="text-gray-600 text-sm text-center mb-4 leading-relaxed">
         {{ partner.description }}
       </p>
-      
-      <!-- 访问网站按钮 -->
+
       <div class="text-center">
         <a 
           :href="partner.website"

@@ -15,7 +15,6 @@
       </div>
     </div>
 
-    <!-- 描述框架 -->
     <div class="space-y-2 mb-4">
       <div class="h-3 bg-gray-300 rounded w-full"></div>
       <div class="h-3 bg-gray-300 rounded w-3/4"></div>
@@ -30,7 +29,6 @@
       <div class="h-3 bg-gray-300 rounded w-12"></div>
     </div>
 
-    <!-- 域名/ip 框架 -->
     <div class="mb-4">
       <div class="h-4 bg-gray-300 rounded w-20 mb-2"></div>
       <div class="space-y-2">

@@ -51,7 +51,6 @@ export const useResourceLoader = () => {
     }
 
     if (state.loading) {
-      // 等待现有负载完成
       return new Promise((resolve) => {
         const checkLoaded = () => {
           if (state.loaded) {
@@ -97,7 +96,6 @@ export const useResourceLoader = () => {
 
   const loadCSSFromUrl = (url: string, timeout: number): Promise<boolean> => {
     return new Promise((resolve, reject) => {
-      // 检查是否已加载
       const existingLink = document.querySelector(`link[href="${url}"]`)
       if (existingLink) {
         resolve(true)

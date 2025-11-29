@@ -4,13 +4,8 @@ export default defineNuxtPlugin(() => {
   const { loadFonts, isFontLoaded } = useFont()
   const initializeFonts = async () => {
     try {
-      // 添加加载类
       document.documentElement.classList.add('fonts-loading')
-      
-      // 加载字体
       await loadFonts()
-      
-      // 检查字体是否成功加载
       const fontsLoaded = isFontLoaded('xiaolai') && isFontLoaded('Cascadia Code')
       
       if (fontsLoaded) {
@@ -27,14 +22,12 @@ export default defineNuxtPlugin(() => {
     }
   }
 
-  // 当DOM加载完成时初始化字体
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeFonts)
   } else {
     initializeFonts()
   }
 
-  // 提供字体工具全局访问
   return {
     provide: {
       fontLoader: {

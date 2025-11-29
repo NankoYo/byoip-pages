@@ -1,6 +1,5 @@
 <template>
   <div class="relative" :class="containerClass">
-    <!-- 加载占位符 -->
     <div 
       v-if="isLoading" 
       class="flex items-center justify-center bg-gray-50 rounded border-2 border-dashed border-gray-200"
@@ -13,7 +12,6 @@
       </div>
     </div>
 
-    <!-- 错误占位符 -->
     <div 
       v-else-if="hasError" 
       class="flex items-center justify-center bg-gray-50 rounded border-2 border-dashed border-gray-200 text-gray-500 text-sm"
@@ -27,7 +25,6 @@
       </div>
     </div>
 
-    <!-- 实际图片 -->
     <img
       ref="imageRef"
       v-show="!isLoading && !hasError"

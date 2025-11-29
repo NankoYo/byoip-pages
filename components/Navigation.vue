@@ -3,17 +3,14 @@
     <!-- 导航栏 -->
     <nav class="navigation-bar">
       <div class="navigation-container">
-        <!-- Logo -->
         <a 
           href="/"
           @click="handleNavigation('/', $event)"
           class="navigation-logo"
         >
-          <img src="https://cdn.jsdmirror.com/gh/FrecklyComb1728/byoip-pages@main/src/assets/favicon.ico" alt="favicon" class="navigation-logo-img" />
+          <img :src="'/favicon.ico'" alt="favicon" class="navigation-logo-img" />
           NB 优选服务
         </a>
-        
-        <!-- 导航链接 -->
         <div class="navigation-links">
           <a 
             v-for="link in navigationLinks"
@@ -29,7 +26,6 @@
       </div>
     </nav>
     
-    <!-- 占位空间，避免内容被固定导航栏遮挡 -->
     <div class="navigation-spacer"></div>
   </div>
 </template>
@@ -44,12 +40,10 @@ const navigationLinks = [
   { path: '/privacy', label: '隐私政策' },
 ]
 
-// 获取路由信息
 const route = useRoute()
 
 // 处理导航点击
 const handleNavigation = async (to: string, event: Event) => {
-  // 如果已经在目标页面，不需要导航
   if (route.path === to) {
     event.preventDefault()
     return
@@ -64,7 +58,6 @@ console.log('Navigation component loaded')
 </script>
 
 <style scoped>
-/* 导航栏基础样式 */
 .navigation-bar {
   background: white;
   border-bottom: 1px solid #e5e7eb;
@@ -84,7 +77,6 @@ console.log('Navigation component loaded')
   margin: 0 auto;
 }
 
-/* Logo 样式 */
 .navigation-logo {
   font-family: 'xiaolai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
@@ -106,14 +98,12 @@ console.log('Navigation component loaded')
   color: #3b82f6;
 }
 
-/* 导航链接容器 */
 .navigation-links {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-/* 导航链接样式 */
 .navigation-link {
   font-family: 'xiaolai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #6b7280;
@@ -134,12 +124,10 @@ console.log('Navigation component loaded')
   font-weight: 600;
 }
 
-/* 占位空间 */
 .navigation-spacer {
   height: 80px;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .navigation-container {
     padding: 0 1rem;

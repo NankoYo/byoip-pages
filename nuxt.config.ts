@@ -2,9 +2,9 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 
 // 在构建时读取配置文件
-const servicesConfig = JSON.parse(readFileSync(join(process.cwd(), 'config/services.json'), 'utf-8'))
-const partnersConfig = JSON.parse(readFileSync(join(process.cwd(), 'config/partners.json'), 'utf-8'))
-const sponsorsConfig = JSON.parse(readFileSync(join(process.cwd(), 'config/sponsors.json'), 'utf-8'))
+const servicesConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/services.json'), 'utf-8'))
+const partnersConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/partners.json'), 'utf-8'))
+const sponsorsConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/sponsors.json'), 'utf-8'))
 
 // 构建时嵌入的应用配置
 const embeddedConfig = {
@@ -63,9 +63,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
 
-  // 指定源码目录
-  srcDir: 'src/',
-
   css: ['~/assets/css/main.css'],
 
   // 应用配置
@@ -86,7 +83,7 @@ export default defineNuxtConfig({
         { name: 'twitter:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: 'https://cdn.jsdmirror.com/gh/FrecklyComb1728/byoip-pages@main/src/assets/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'canonical', href: 'https://www.byoip.top' }
       ],
       script: [
@@ -129,6 +126,11 @@ export default defineNuxtConfig({
       {
         baseURL: '/icon',
         dir: 'public/icon'
+      },
+      {
+        baseURL: '/',
+        dir: 'public',
+        maxAge: 31536000
       }
     ]
   },

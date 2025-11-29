@@ -1,14 +1,6 @@
-/**
- * 客户端配置加载插件
- * 配置已在构建时嵌入HTML，此插件仅用于验证配置可用性
- */
-
 export default defineNuxtPlugin(() => {
-  // 只在客户端运行
   if (import.meta.server) return
-
   try {
-    // 配置已通过构建时嵌入到 window.__APP_CONFIG__
     const appConfig = (window as any).__APP_CONFIG__
     
     if (!appConfig) {
@@ -16,7 +8,6 @@ export default defineNuxtPlugin(() => {
       return
     }
 
-    // 记录配置加载状态
     console.log('Embedded configuration loaded successfully:', {
       services: appConfig.services?.services?.length || 0,
       partners: appConfig.partners?.partners?.length || 0,

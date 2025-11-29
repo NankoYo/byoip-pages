@@ -23,7 +23,6 @@
         </div>
       </div>
 
-      <!-- 错误状态 -->
       <div v-if="errors.services" class="text-center py-12">
         <div class="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
           <svg class="mx-auto h-12 w-12 text-red-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,9 +37,7 @@
         </div>
       </div>
 
-      <!-- 服务网格 -->
       <div v-if="services?.services && services.services.length > 0" class="space-y-8">
-        <!-- 服务状态 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div class="bg-green-50 rounded-lg p-6 text-center">
             <div class="text-2xl font-bold text-green-600 font-cascadia">{{ activeServicesCount }}</div>
@@ -56,7 +53,6 @@
           </div>
         </div>
 
-        <!-- 服务列表 -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="service in services.services" :key="service.id">
             <DomainCard :service="service" />
@@ -65,7 +61,6 @@
         <div class="h-5"></div>
       </div>
 
-      <!-- 空状态 -->
       <div v-else class="text-center py-12">
         <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -81,8 +76,6 @@
 </template>
 
 <script setup lang="ts">
-
-// 使用响应式文本适配
 const { finalText, textClasses } = useResponsiveText({
   zh: '本优选免费，你如果付费的你被骗了',
   en: 'This is the preferred free option. If you paid, you\'ve been scammed.'
@@ -91,19 +84,15 @@ const { finalText, textClasses } = useResponsiveText({
   breakpoint: 768
 })
 
-const { services, isLoaded } = useStaticConfig() // 使用静态配置
-const errors = ref({ services: null as string | null }) // 记录错误
+const { services, isLoaded } = useStaticConfig()
+const errors = ref({ services: null as string | null })
 
-// 检查配置是否加载
 onMounted(() => {
   if (!isLoaded.value) {
     errors.value.services = '配置加载失败，请刷新页面重试'
   }
 })
 
-
-
-// 重新加载服务（刷新页面）
 const reloadServices = () => {
   window.location.reload()
 }

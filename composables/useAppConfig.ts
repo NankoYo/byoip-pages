@@ -1,7 +1,3 @@
-/**
- * 应用配置管理 - 使用构建时注入的配置
- */
-
 import type {
   ServicesConfig,
   PartnersConfig,
@@ -28,7 +24,6 @@ interface AppConfigManager {
   getConfig: <T extends keyof AppConfig>(key: T) => AppConfig[T]
 }
 
-// 默认配置，防止构建时配置加载失败
 const defaultConfig: AppConfig = {
   services: { services: [] },
   partners: { partners: [] },
@@ -81,9 +76,8 @@ const defaultConfig: AppConfig = {
 }
 
 export const useStaticConfig = (): AppConfigManager => {
-  // 从构建时注入的全局配置获取数据
   const getGlobalConfig = (): AppConfig => {
-    // 客户端：从window.__APP_CONFIG__获取
+
     if (typeof window !== 'undefined' && (window as any).__APP_CONFIG__) {
       const globalConfig = (window as any).__APP_CONFIG__
       return {
@@ -95,7 +89,6 @@ export const useStaticConfig = (): AppConfigManager => {
       }
     }
 
-    // 服务端：从runtimeConfig获取
     const runtimeConfig = useRuntimeConfig()
     if (runtimeConfig.public.appConfig) {
       const runtimeAppConfig = runtimeConfig.public.appConfig as any
@@ -108,20 +101,15 @@ export const useStaticConfig = (): AppConfigManager => {
       }
     }
 
-    // 回退到默认配置
     return defaultConfig
   }
 
   const config = ref<AppConfig>(getGlobalConfig())
-
-  // 响应式配置访问器
   const services = computed(() => config.value.services)
   const partners = computed(() => config.value.partners)
   const sponsors = computed(() => config.value.sponsors)
   const cdn = computed(() => config.value.cdn)
   const performance = computed(() => config.value.performance)
-
-  // 检查配置是否已加载
   const isLoaded = computed(() => {
     return !!(
       config.value.services?.services?.length ||
@@ -132,14 +120,10 @@ export const useStaticConfig = (): AppConfigManager => {
     )
   })
 
-  // 通用配置获取方法
   const getConfig = <T extends keyof AppConfig>(key: T): AppConfig[T] => {
     return config.value[key]
   }
-
-  // 客户端初始化
   onMounted(() => {
-    // 确保客户端配置是最新的
     config.value = getGlobalConfig()
   })
 
@@ -153,8 +137,6 @@ export const useStaticConfig = (): AppConfigManager => {
     getConfig
   }
 }
-
-// 便捷的配置访问函数
 export const useServices = () => {
   const { services } = useStaticConfig()
   return services
