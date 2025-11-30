@@ -12,8 +12,8 @@
         />
       </div>
       
-      
-      <h3 class="text-lg font-semibold text-center mb-2 font-cascadia">
+
+      <h3 class="text-lg font-semibold text-center mb-2 font-mixed">
         {{ partner.name }}
       </h3>
       

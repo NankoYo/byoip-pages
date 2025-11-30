@@ -1,10 +1,4 @@
-import type {
-  ServicesConfig,
-  PartnersConfig,
-  SponsorsConfig,
-  CDNMirrorConfig,
-  PerformanceConfig
-} from '~/types'
+import { useRuntimeConfig } from '#app'
 
 interface AppConfig {
   services: ServicesConfig
@@ -24,87 +18,9 @@ interface AppConfigManager {
   getConfig: <T extends keyof AppConfig>(key: T) => AppConfig[T]
 }
 
-const defaultConfig: AppConfig = {
-  services: { services: [] },
-  partners: { partners: [] },
-  sponsors: { sponsors: [] },
-  cdn: {
-    github: {
-      template: "https://{{mirror}}/gh/{{owner}}/{{repo}}@{{branch}}/{{path}}",
-      mirror: "cdn.jsdelivr.net"
-    },
-    npm: {
-      template: "https://{{mirror}}/npm/{{package}}@{{version}}/{{path}}",
-      mirror: "cdn.jsdelivr.net"
-    },
-    alternatives: {
-      mirrors: ["cdn.jsdelivr.net"]
-    }
-  },
-  performance: {
-    optimization: {
-      preload: { enabled: false, routes: [], resources: [] },
-      lazyLoading: { enabled: true, threshold: "100px", components: [] },
-      caching: {
-        staticAssets: { maxAge: 31536000, immutable: true },
-        apiResponses: { maxAge: 300, staleWhileRevalidate: 86400 },
-        fonts: { maxAge: 31536000, crossOrigin: "anonymous" }
-      },
-      compression: { enabled: true, algorithms: ["gzip"], threshold: 1024 }
-    },
-    monitoring: {
-      coreWebVitals: {
-        enabled: true,
-        thresholds: { fcp: 1800, lcp: 2500, cls: 0.1, fid: 100 }
-      },
-      resourceTiming: { enabled: true, slowResourceThreshold: 1000 },
-      longTasks: { enabled: true, threshold: 50 }
-    },
-    compatibility: {
-      polyfills: {
-        intersectionObserver: true,
-        fetch: true,
-        customProperties: true
-      },
-      fallbacks: {
-        webp: "jpg",
-        avif: "webp",
-        modernFonts: "systemFonts"
-      }
-    }
-  }
-}
-
 export const useStaticConfig = (): AppConfigManager => {
-  const getGlobalConfig = (): AppConfig => {
-
-    if (typeof window !== 'undefined' && (window as any).__APP_CONFIG__) {
-      const globalConfig = (window as any).__APP_CONFIG__
-      return {
-        services: globalConfig.services || defaultConfig.services,
-        partners: globalConfig.partners || defaultConfig.partners,
-        sponsors: globalConfig.sponsors || defaultConfig.sponsors,
-        cdn: globalConfig.cdn || defaultConfig.cdn,
-        performance: globalConfig.performance || defaultConfig.performance
-      }
-    }
-
-    const runtimeConfig = useRuntimeConfig()
-    if (runtimeConfig.public.appConfig) {
-      const runtimeAppConfig = runtimeConfig.public.appConfig as any
-      return {
-        services: runtimeAppConfig.services || defaultConfig.services,
-        partners: runtimeAppConfig.partners || defaultConfig.partners,
-        sponsors: runtimeAppConfig.sponsors || defaultConfig.sponsors,
-        cdn: runtimeAppConfig.cdn || defaultConfig.cdn,
-        performance: runtimeAppConfig.performance || defaultConfig.performance
-      }
-    }
-
-    return defaultConfig
-  }
-
-  const config = ref<AppConfig>(getGlobalConfig())
+  const runtimeConfig = useRuntimeConfig()
+  const config = ref<AppConfig>(runtimeConfig.public.appConfig)
   const services = computed(() => config.value.services)
   const partners = computed(() => config.value.partners)
   const sponsors = computed(() => config.value.sponsors)
@@ -124,7 +40,7 @@ export const useStaticConfig = (): AppConfigManager => {
     return config.value[key]
   }
   onMounted(() => {
-    config.value = getGlobalConfig()
+    config.value = runtimeConfig.public.appConfig
   })
 
   return {

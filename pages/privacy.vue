@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto px-4 py-8">
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-cascadia">隐私政策</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-mixed">隐私政策</h1>
         <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
       </div>
       
@@ -46,7 +46,7 @@ import { ref, onMounted } from 'vue'
 
 // 页面标题
 useHead({
-  title: '隐私政策 - NB 优选服务',
+  title: '隐私政策 | NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
   meta: [
     { name: 'description', content: 'NB 优选服务隐私政策，包含信息收集、使用和保护措施' }
   ]

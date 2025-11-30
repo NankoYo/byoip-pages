@@ -12,17 +12,8 @@ useHead({
   htmlAttrs: {
     lang: 'zh-CN'
   },
-  bodyAttrs: {
-    class: 'font-sans'
-  }
+  bodyAttrs: {}
 })
 
 console.log('App loaded')
 </script>
-
-<style>
-/* 全局样式 */
-body {
-  font-family: 'Cascadia Code', monospace, system-ui, sans-serif;
-}
-</style>

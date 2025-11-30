@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+
+<url>
+ <loc>https://github.com/FrecklyComb1728/byoip-pages</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-11-30</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.byoip.top</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-11-30</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.byoip.top/partners</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-11-30</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.byoip.top/sponsor</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-11-30</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.byoip.top/about</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-11-30</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+<url>
+ <loc>https://www.byoip.top/privacy</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-11-30</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+
+</urlset>

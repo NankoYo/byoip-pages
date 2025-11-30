@@ -1,8 +1,8 @@
 <template>
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8 font-mixed">
       <!-- 头部区域 -->
       <div class="text-center mb-12">
-        <h1 class="card-title text-4xl mb-6">技术合作伙伴</h1>
+        <h1 class="card-title text-4xl mb-6 font-mixed">技术合作伙伴</h1>
         <p class="card-description text-xl max-w-3xl mx-auto mb-8 text-gray-600">
           感谢我们的技术合伙人在 NB 优选服务发展过程中提供的专业技术支持和宝贵建议
         </p>
@@ -51,7 +51,7 @@ const error = ref(null)
 const refresh = () => window.location.reload()
 
 useHead({
-  title: '技术合伙人 - NB 优选服务',
+  title: '技术合伙人 | NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
   meta: [
     { name: 'description', content: '感谢我们的技术合伙人在 NB 优选服务发展过程中提供的专业技术支持和宝贵建议' }
   ]

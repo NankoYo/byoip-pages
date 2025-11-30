@@ -17,7 +17,7 @@
       >
         <slot name="item" :item="item" :index="index">
           <div class="default-item">
-            <h3 class="item-title font-cascadia">{{ item.title }}</h3>
+            <h3 class="item-title font-mixed">{{ item.title }}</h3>
             <p class="item-description font-mixed">{{ item.description }}</p>
           </div>
         </slot>

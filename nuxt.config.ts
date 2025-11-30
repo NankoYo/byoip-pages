@@ -5,28 +5,17 @@ import { join } from 'path'
 const servicesConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/services.json'), 'utf-8'))
 const partnersConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/partners.json'), 'utf-8'))
 const sponsorsConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/sponsors.json'), 'utf-8'))
+const cdnConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/cdn.json'), 'utf-8'))
 
 // 构建时嵌入的应用配置
 const embeddedConfig = {
-  services: servicesConfig,
-  partners: partnersConfig,
-  sponsors: sponsorsConfig,
-  cdn: {
-    github: {
-      template: "https://{{mirror}}/gh/{{owner}}/{{repo}}@{{branch}}/{{path}}",
-      mirror: "cdn.jsdelivr.net"
-    },
-    npm: {
-      template: "https://{{mirror}}/npm/{{package}}@{{version}}/{{path}}",
-      mirror: "cdn.jsdelivr.net"
-    },
-    alternatives: {
-      mirrors: "cdn.jsdelivr.net"
-    }
-  },
+  services: servicesConfig || { services: [] },
+  partners: partnersConfig || { partners: [] },
+  sponsors: sponsorsConfig || { sponsors: [] },
+  cdn: cdnConfig,
   performance: {
     optimization: {
-      preload: { enabled: false, routes: [], resources: [] },
+      preload: { enabled: true, routes: [], resources: [] },
       lazyLoading: { enabled: true, threshold: "100px", components: [] },
       caching: {
         staticAssets: { maxAge: 31536000, immutable: true },
@@ -68,18 +57,18 @@ export default defineNuxtConfig({
   // 应用配置
   app: {
     head: {
-      title: 'NB 优选服务',
+      title: 'NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
         { name: 'keywords', content: 'CDN, IP优选, CloudFlare, Vercel, Netlify, 网络加速, 节点监测' },
-        { name: 'author', content: '© NB 优选服务' },
-        { property: 'og:title', content: '© NB 优选服务' },
+        { name: 'author', content: '© MIFENG' },
+        { property: 'og:title', content: '© NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
         { property: 'og:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: '© NB 优选服务' },
+        { name: 'twitter:title', content: '© NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' },
         { name: 'twitter:description', content: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务' }
       ],
       link: [
@@ -87,7 +76,6 @@ export default defineNuxtConfig({
         { rel: 'canonical', href: 'https://www.byoip.top' }
       ],
       script: [
-        { src: 'https://cdn.tailwindcss.com' },
         // 嵌入应用配置和结构化数据
         {
           innerHTML: `
@@ -98,7 +86,7 @@ export default defineNuxtConfig({
             const structuredData = {
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "NB 优选服务",
+              "name": "NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务",
               "description": "CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务",
               "applicationCategory": "NetworkingApplication",
               "operatingSystem": "Web Browser",
@@ -117,8 +105,8 @@ export default defineNuxtConfig({
 
   // 构建配置
   nitro: {
-    compressPublicAssets: true,
-    minify: true,
+    compressPublicAssets: false,
+    minify: false,
     prerender: {
       routes: ['/partners', '/sponsor']
     },
@@ -159,6 +147,13 @@ export default defineNuxtConfig({
       fs: {
         allow: ['..']
       }
+    }
+  },
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
     }
   },
 

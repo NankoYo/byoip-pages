@@ -7,7 +7,7 @@
           <p class="card-description text-xl max-w-3xl mx-auto mb-8 text-gray-600 text-center">
             感谢所有赞助商对 NB 优选服务项目的大力支持，您的支持是我们持续改进和发展的动力
           </p>
-          <h2 class="text-3xl font-bold text-center mb-8 font-cascadia text-green-600">
+          <h2 class="text-3xl font-bold text-center mb-8 font-mixed text-green-600">
             支持我们
           </h2>
           <div class="bg-green-50 border border-green-200 rounded-lg p-8">
@@ -79,7 +79,7 @@
       </div>
 
       <div v-if="sponsors && sponsors.length > 0">
-        <h2 class="text-2xl font-bold text-center mb-8 font-cascadia text-blue-600">
+        <h2 class="text-2xl font-bold text-center mb-8 font-mixed text-blue-600">
           赞助商列表
         </h2>
         
@@ -99,7 +99,7 @@
                   image-class="h-12 w-auto object-contain"
                 />
                 <div>
-                  <h3 class="text-lg font-semibold font-cascadia">{{ sponsor.name }}</h3>
+                  <h3 class="text-lg font-semibold font-mixed">{{ sponsor.name }}</h3>
                   <p class="text-gray-600 text-sm">{{ sponsor.description }}</p>
                 </div>
               </div>
@@ -125,7 +125,7 @@
         <div class="h-16"></div>
 
       </div>
-      
+
       <div v-else class="text-center py-12">
         <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M9 21h6a2 2 0 002-2V9a2 2 0 00-2-2H9a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -189,7 +189,7 @@ onMounted(() => {
 
 // 设置页面head
 useHead({
-  title: '赞助支持 - NB 优选服务',
+  title: '赞助支持 | NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
   meta: [
     { name: 'description', content: '感谢所有赞助商对 NB 优选服务项目的大力支持，您的支持是我们持续改进和发展的动力' }
   ]

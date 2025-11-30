@@ -9,7 +9,7 @@
           </div>
         </div>
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 font-cascadia">{{ service.name }}</h3>
+          <h3 class="text-lg font-semibold text-gray-900 font-mixed">{{ service.name }}</h3>
           <p class="text-sm text-gray-500">{{ service.provider.toUpperCase() }}</p>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="w-2 h-2 rounded-full" :class="getNodeStatusColor(service.nodeStatus)"></div>
         <span class="text-sm text-gray-600">节点状态: {{ getNodeStatusText(service.nodeStatus) }}</span>
       </div>
-      <div v-if="service.responseTime" class="text-sm text-gray-600 font-cascadia">
+      <div v-if="service.responseTime" class="text-sm text-gray-600 font-mixed">
         {{ service.responseTime }}ms
       </div>
     </div>
@@ -41,7 +41,7 @@
       <div class="space-y-2">
         <div v-for="(ip, index) in service.optimizedIPs" :key="index" 
              class="flex items-center justify-between bg-gray-50 rounded px-3 py-2">
-          <span class="text-sm font-mono text-gray-800 font-cascadia">{{ ip }}</span>
+          <span class="text-sm font-mono text-gray-800 font-mixed">{{ ip }}</span>
           <button @click="copyToClipboard(ip)" 
                   class="text-blue-600 hover:text-blue-800 text-xs font-medium transition-colors"
                   :class="{ 'text-green-600': copiedIP === ip }">

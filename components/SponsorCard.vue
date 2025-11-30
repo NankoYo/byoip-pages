@@ -25,7 +25,7 @@
       </div>
       
       <!-- 赞助商名称 -->
-      <h3 class="text-lg font-semibold text-center mb-2 font-cascadia">
+      <h3 class="text-lg font-semibold text-center mb-2 font-mixed">
         {{ sponsor.name }}
       </h3>
       
@@ -75,6 +75,26 @@ const getLevelStyles = (level: string) => {
     platinum: 'bg-blue-100 text-blue-800 border border-blue-200',
     gold: 'bg-yellow-100 text-yellow-800 border border-yellow-200',
     silver: 'bg-gray-100 text-gray-800 border border-gray-200'
+  }
+  return styles[level as keyof typeof styles] || styles.silver
+}
+
+const getLevelLabel = (level: string) => {
+  const labels = {
+    diamond: '钻石',
+    platinum: '白金',
+    gold: '黄金',
+    silver: '白银'
+  }
+  return labels[level as keyof typeof labels] || labels.silver
+}
+
+const getLevelButtonStyles = (level: string) => {
+  const styles = {
+    diamond: 'bg-purple-600 hover:bg-purple-700',
+    platinum: 'bg-blue-600 hover:bg-blue-700',
+    gold: 'bg-yellow-500 hover:bg-yellow-600',
+    silver: 'bg-gray-600 hover:bg-gray-700'
   }
   return styles[level as keyof typeof styles] || styles.silver
 }

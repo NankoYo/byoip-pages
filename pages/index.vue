@@ -40,15 +40,15 @@
       <div v-if="services?.services && services.services.length > 0" class="space-y-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div class="bg-green-50 rounded-lg p-6 text-center">
-            <div class="text-2xl font-bold text-green-600 font-cascadia">{{ activeServicesCount }}</div>
+            <div class="text-2xl font-bold text-green-600 font-mixed">{{ activeServicesCount }}</div>
             <div class="text-sm text-green-700">正常服务</div>
           </div>
           <div class="bg-yellow-50 rounded-lg p-6 text-center">
-            <div class="text-2xl font-bold text-yellow-600 font-cascadia">{{ maintenanceServicesCount }}</div>
+            <div class="text-2xl font-bold text-yellow-600 font-mixed">{{ maintenanceServicesCount }}</div>
             <div class="text-sm text-yellow-700">维护中</div>
           </div>
           <div class="bg-blue-50 rounded-lg p-6 text-center">
-            <div class="text-2xl font-bold text-blue-600 font-cascadia">1000+</div>
+            <div class="text-2xl font-bold text-blue-600 font-mixed">1000+</div>
             <div class="text-sm text-blue-700">优选 IP 总数</div>
           </div>
         </div>
@@ -106,7 +106,7 @@ const maintenanceServicesCount = computed(() => {
 })
 
 useHead({
-  title: 'NB 优选服务 - 首页 | CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务',
+  title: '首页 | NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
   meta: [
     {
       name: 'description',
