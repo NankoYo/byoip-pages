@@ -8,7 +8,7 @@
           @click="handleNavigation('/', $event)"
           class="navigation-logo"
         >
-          <img :src="'/favicon.ico'" alt="favicon" class="navigation-logo-img" />
+          <img src="/favicon.ico" alt="favicon" class="navigation-logo-img" />
           NB 优选服务
         </a>
         <div class="navigation-links">
@@ -53,8 +53,6 @@ const handleNavigation = async (to: string, event: Event) => {
   event.preventDefault()
   await navigateTo(to)
 }
-
-console.log('Navigation component loaded')
 </script>
 
 <style scoped>

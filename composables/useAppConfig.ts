@@ -1,4 +1,11 @@
 import { useRuntimeConfig } from '#app'
+import type {
+  ServicesConfig,
+  PartnersConfig,
+  SponsorsConfig,
+  CDNMirrorConfig,
+  PerformanceConfig
+} from '~/types'
 
 interface AppConfig {
   services: ServicesConfig
@@ -20,7 +27,10 @@ interface AppConfigManager {
 
 export const useStaticConfig = (): AppConfigManager => {
   const runtimeConfig = useRuntimeConfig()
-  const config = ref<AppConfig>(runtimeConfig.public.appConfig)
+  const initialConfig = (runtimeConfig.public?.appConfig as unknown as AppConfig) ||
+    (process.client ? (window as any).__APP_CONFIG__ as AppConfig | undefined : undefined) ||
+    ({} as AppConfig)
+  const config = ref<AppConfig>(initialConfig)
   const services = computed(() => config.value.services)
   const partners = computed(() => config.value.partners)
   const sponsors = computed(() => config.value.sponsors)
@@ -40,7 +50,7 @@ export const useStaticConfig = (): AppConfigManager => {
     return config.value[key]
   }
   onMounted(() => {
-    config.value = runtimeConfig.public.appConfig
+    config.value = runtimeConfig.public.appConfig as unknown as AppConfig
   })
 
   return {

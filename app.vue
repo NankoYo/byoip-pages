@@ -15,5 +15,4 @@ useHead({
   bodyAttrs: {}
 })
 
-console.log('App loaded')
 </script>
