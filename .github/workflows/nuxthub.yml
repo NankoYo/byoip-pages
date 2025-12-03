@@ -32,4 +32,4 @@ jobs:
       - name: Build & Deploy to NuxtHub
         uses: nuxt-hub/action@v2
         with:
-          project-key: byoip-pages-6vqb
+          project-key: byoip-pages-yjmv
