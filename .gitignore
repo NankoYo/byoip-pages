@@ -4,6 +4,7 @@
 .cache/
 dist/
 node_modules/
+.vscode/
 *.log
 .DS_Store
 .fleet
@@ -12,3 +13,4 @@ node_modules/
 .env.*
 !.env.example
 pnpm-lock.yaml
+

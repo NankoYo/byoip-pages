@@ -1,0 +1,30 @@
+{
+  "notices": [
+    {
+      "id": "1",
+      "notice": "true",
+      "time": "2025/12/12",
+      "message": "由于不可抗因素，我们的域名遭到江苏、上海地区的DNS污染，目前我们正在寻找解决办法。",
+      "type": "warning",
+      "position": "top-right",
+      "theme": "glassmorphism",
+      "duration": 10000,
+      "progress": true,
+      "closable": true,
+      "pauseOnHover": true,
+      "closeOnClick": false,
+      "preventDuplicates": true
+    }
+  ],
+  "copySuccess": {
+    "message": "已成功复制",
+    "type": "success",
+    "position": "top-center",
+    "theme": "default",
+    "duration": 1500,
+    "progress": true,
+    "closable": false,
+    "pauseOnHover": false,
+    "closeOnClick": false
+  }
+}

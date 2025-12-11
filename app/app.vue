@@ -1,0 +1,20 @@
+<template>
+  <div class="min-h-screen bg-white text-gray-900 pb-24">
+    <Navigation />
+    <ErrorNotification />
+    <Loading />
+    <NuxtPage />
+    <Footer />
+  </div>
+</template>
+
+<script setup lang="ts">
+// 设置基本head
+useHead({
+  htmlAttrs: {
+    lang: 'zh-CN'
+  },
+  bodyAttrs: {}
+})
+
+</script>

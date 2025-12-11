@@ -1,11 +1,13 @@
 import { readFileSync } from 'fs'
 import { join } from 'path'
+import { defineNuxtConfig } from 'nuxt/config'
 
 // 在构建时读取配置文件
-const servicesConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/services.json'), 'utf-8'))
-const partnersConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/partners.json'), 'utf-8'))
-const sponsorsConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/sponsors.json'), 'utf-8'))
-const cdnConfig = JSON.parse(readFileSync(join(process.cwd(), 'assets/config/cdn.json'), 'utf-8'))
+const servicesConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/services.json'), 'utf-8'))
+const partnersConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/partners.json'), 'utf-8'))
+const sponsorsConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/sponsors.json'), 'utf-8'))
+const cdnConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/cdn.json'), 'utf-8'))
+const butterpopConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/butterpop.json'), 'utf-8'))
 
 // 构建时嵌入的应用配置
 const embeddedConfig = {
@@ -13,6 +15,7 @@ const embeddedConfig = {
   partners: partnersConfig || { partners: [] },
   sponsors: sponsorsConfig || { sponsors: [] },
   cdn: cdnConfig,
+  butterpop: butterpopConfig,
   performance: {
     optimization: {
       preload: { enabled: true, routes: [], resources: [] },
@@ -40,8 +43,7 @@ const embeddedConfig = {
       },
       fallbacks: {
         webp: "jpg",
-        avif: "webp",
-        modernFonts: "systemFonts"
+        avif: "webp"
       }
     }
   }
@@ -49,13 +51,27 @@ const embeddedConfig = {
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-09-19',
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
   ssr: true,
 
-  css: ['~/assets/css/main.css'],
+  css: ['./app/assets/css/main.css'],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  },
 
   // 应用配置
   app: {
+    pageTransition: { name: 'page', mode: 'default' },
     head: {
       title: 'NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
       meta: [
@@ -73,31 +89,24 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://www.byoip.top' }
+        { rel: 'canonical', href: 'https://www.byoip.top' },
+        { rel: 'preconnect', href: 'https://cdn.jsdmirror.com', crossorigin: 'anonymous' },
       ],
       script: [
-        // 嵌入应用配置和结构化数据
         {
-          innerHTML: `
-            // 嵌入构建时配置
-            window.__APP_CONFIG__ = ${JSON.stringify(embeddedConfig)};
-            
-            // 为SEO添加结构化数据
-            const structuredData = {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务",
-              "description": "CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务",
-              "applicationCategory": "NetworkingApplication",
-              "operatingSystem": "Web Browser",
-            };
-            
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.textContent = JSON.stringify(structuredData);
-            document.head.appendChild(script);
-          `,
-          type: 'text/javascript'
+          type: 'text/javascript',
+          innerHTML: `window.__APP_CONFIG__ = ${JSON.stringify(embeddedConfig)};`
+        },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: 'NB 优选服务 - CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
+            description: 'CloudFlare、EdgeOne、Vercel、Netlify 等全球主流云服务商的 CDN IP 优选、节点状态监测服务',
+            applicationCategory: 'NetworkingApplication',
+            operatingSystem: 'Web Browser'
+          })
         }
       ]
     }
@@ -105,8 +114,8 @@ export default defineNuxtConfig({
 
   // 构建配置
   nitro: {
-    compressPublicAssets: false,
-    minify: false,
+    compressPublicAssets: true,
+    minify: true,
     prerender: {
       routes: ['/partners', '/sponsor']
     },
@@ -133,13 +142,6 @@ export default defineNuxtConfig({
           drop_debugger: true
         }
       },
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ['vue', '@vue/runtime-core']
-          }
-        }
-      },
       assetsDir: 'assets'
     },
     assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.ico'],
@@ -147,13 +149,6 @@ export default defineNuxtConfig({
       fs: {
         allow: ['..']
       }
-    }
-  },
-
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
     }
   },
 
