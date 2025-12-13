@@ -4,10 +4,12 @@
     <!-- <div class="bg-gray-50 py-16"> -->
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h1 class="card-title text-4xl mb-6 text-center font-mixed">赞助支持</h1>
-          <p class="card-description text-xl max-w-3xl mx-auto mb-8 text-gray-600 text-center">
-            感谢所有赞助商对 NB 优选服务项目的大力支持，您的支持是我们持续改进和发展的动力
-          </p>
+          <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-chinese">赞助支持</h1>
+            <p class="card-description text-xl max-w-3xl mx-auto mb-8 text-gray-600">
+              感谢所有赞助商对 NB 优选服务项目的大力支持，您的支持是我们持续改进和发展的动力
+            </p>
+          </div>
           <h2 class="text-3xl font-bold text-center mb-8 font-mixed text-green-600">
             支持我们
           </h2>

@@ -17,6 +17,9 @@ html {
   font-family: var(--font-mixed);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-gutter: stable both-edges;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
 }
 
 body {
@@ -24,6 +27,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
+  overflow-y: auto;
 }
 
 /* 字体类 */
@@ -167,6 +171,26 @@ body {
 /* 平滑滚动行为 */
 html {
   scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
 }
 
 /* 链接悬停效果，提升用户体验 */

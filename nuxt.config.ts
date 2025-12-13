@@ -2,14 +2,12 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { defineNuxtConfig } from 'nuxt/config'
 
-// 在构建时读取配置文件
 const servicesConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/services.json'), 'utf-8'))
 const partnersConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/partners.json'), 'utf-8'))
 const sponsorsConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/sponsors.json'), 'utf-8'))
 const cdnConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/cdn.json'), 'utf-8'))
 const butterpopConfig = JSON.parse(readFileSync(join(process.cwd(), 'app/assets/config/butterpop.json'), 'utf-8'))
 
-// 构建时嵌入的应用配置
 const embeddedConfig = {
   services: servicesConfig || { services: [] },
   partners: partnersConfig || { partners: [] },
@@ -19,13 +17,13 @@ const embeddedConfig = {
   performance: {
     optimization: {
       preload: { enabled: true, routes: [], resources: [] },
-      lazyLoading: { enabled: true, threshold: "100px", components: [] },
+      lazyLoading: { enabled: true, threshold: '100px', components: [] },
       caching: {
         staticAssets: { maxAge: 31536000, immutable: true },
         apiResponses: { maxAge: 300, staleWhileRevalidate: 86400 },
-        fonts: { maxAge: 31536000, crossOrigin: "anonymous" }
+        fonts: { maxAge: 31536000, crossOrigin: 'anonymous' }
       },
-      compression: { enabled: true, algorithms: ["gzip"], threshold: 1024 }
+      compression: { enabled: true, algorithms: ['gzip'], threshold: 1024 }
     },
     monitoring: {
       coreWebVitals: {
@@ -42,12 +40,14 @@ const embeddedConfig = {
         customProperties: true
       },
       fallbacks: {
-        webp: "jpg",
-        avif: "webp"
+        webp: 'jpg',
+        avif: 'webp'
       }
     }
   }
 }
+
+ 
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-09-19',

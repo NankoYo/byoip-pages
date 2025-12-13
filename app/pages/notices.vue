@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-4 py-8 max-w-4xl">
     <div class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-chinese">历史公告</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-chinese">历史公告</h1>
       <p class="text-lg text-gray-600 font-chinese">
         查看所有历史系统公告与通知
       </p>

@@ -1,11 +1,10 @@
 <template>
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-0">
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-mixed">关于我们</h1>
-        <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-chinese">关于我们</h1>
       </div>
 
-      <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8">
+      <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6">
         <div class="prose prose-lg mx-auto">
           <h2 class="text-2xl font-bold text-gray-800 mb-4">项目简介</h2>
           <p class="mb-6">

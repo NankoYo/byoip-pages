@@ -58,7 +58,6 @@
             <DomainCard :service="service" />
           </div>
         </div>
-        <div class="h-5"></div>
       </div>
 
       <div v-else class="text-center py-12">
