@@ -128,7 +128,6 @@
 
 <script setup lang="ts">
 import type { CDNServiceConfig } from '~/types'
-import { ButterPop } from 'butterpop'
 import { useNotices } from '~/composables/useNotices'
 
 interface Props {
@@ -206,11 +205,17 @@ const handleSwitch = (index: number) => {
 const copiedIP = ref<string | null>(null)
 const { copySuccessConfig } = useNotices()
 
+const getButterPop = () => {
+  if (!import.meta.client) return null
+  return (window as any).ButterPop || null
+}
+
 const copyToClipboard = async (text: string) => {
+  const butterPop = getButterPop()
   try {
     await navigator.clipboard.writeText(text)
     copiedIP.value = text
-    ButterPop.show(copySuccessConfig.value)
+    if (butterPop) butterPop.show(copySuccessConfig.value)
     setTimeout(() => {
       copiedIP.value = null
     }, 2000)
@@ -224,7 +229,7 @@ const copyToClipboard = async (text: string) => {
     document.body.removeChild(textArea)
     
     copiedIP.value = text
-    ButterPop.show(copySuccessConfig.value)
+    if (butterPop) butterPop.show(copySuccessConfig.value)
     setTimeout(() => {
       copiedIP.value = null
     }, 2000)

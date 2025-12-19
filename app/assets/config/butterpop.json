@@ -11,7 +11,7 @@
       "duration": 10000,
       "progress": true,
       "closable": true,
-      "pauseOnHover": true,
+      "pauseOnHover": false,
       "closeOnClick": false,
       "preventDuplicates": true
     }

@@ -1,6 +1,14 @@
 {
   "sponsors": [
     {
+      "id": "sponsor-5",
+      "name": "慕白",
+      "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3966470647&spec=0",
+      "description": "我是慕白",
+      "website": "https://368683.xyz",
+      "amount": "3666888.xyz"
+    },
+    {
       "id": "sponsor-4",
       "name": "美速哥铁粉",
       "logo": "https://q2.qlogo.cn/headimg_dl?dst_uin=3638225108&spec=0",
@@ -19,9 +27,9 @@
     {
       "id": "sponsor-2",
       "name": "･ᴗ･ 7710",
-      "logo": "https://letteravatar.com/s/avatar.png?text=7&round=10%25&font=Courier%20Prime",
+      "logo": "/images/avatar/7710.jpg",
       "description": "老铁666",
-      "website": "",
+      "website": "", 
       "amount": "¥36.60"
     },
     {

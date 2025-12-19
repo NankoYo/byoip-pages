@@ -83,18 +83,23 @@ const { finalText, textClasses } = useResponsiveText({
   breakpoint: 768
 })
 
-// ButterPop 集成
-import { ButterPop } from 'butterpop'
 import { useNotices } from '~/composables/useNotices'
 
 const { activeNotices, copySuccessConfig } = useNotices()
 
+const getButterPop = () => {
+  if (!import.meta.client) return null
+  return (window as any).ButterPop || null
+}
+
 const copyText = () => {
+  const butterPop = getButterPop()
+  if (!butterPop) return
   if (typeof navigator !== 'undefined' && navigator.clipboard) {
     navigator.clipboard.writeText(finalText.value).then(() => {
-      ButterPop.show(copySuccessConfig.value)
+      butterPop.show(copySuccessConfig.value)
     }).catch(() => {
-      ButterPop.error('复制失败，请手动复制')
+      butterPop.error('复制失败，请手动复制')
     })
   }
 }
@@ -119,10 +124,11 @@ onMounted(() => {
     errors.value.services = '配置加载失败，请刷新页面重试'
   }
 
-  // 显示活跃公告
+  const butterPop = getButterPop()
+  if (!butterPop) return
   if (activeNotices.value.length > 0) {
     activeNotices.value.forEach(notice => {
-      ButterPop.show(notice)
+      butterPop.show(notice)
     })
   }
 })

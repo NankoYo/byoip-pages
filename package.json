@@ -1,6 +1,5 @@
 {
   "name": "byoip-pages",
-  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "butterpop": "^1.0.4",
     "tailwindcss": "^3.3.0"
   },
   "devDependencies": {

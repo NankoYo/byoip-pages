@@ -1,33 +1,34 @@
-import { ButterPop } from 'butterpop'
+import { defineNuxtPlugin } from '#app'
+import { useCDN } from '~/composables/useCDN'
+import { useResourceLoader } from '~/composables/useResourceLoader'
 
-export default defineNuxtPlugin(async () => {
+const BUTTERPOP_GH_OWNER = 'FrecklyComb1728'
+const BUTTERPOP_GH_REPO = 'ButterPop.js'
+const BUTTERPOP_GH_BRANCH = '1.0.0'
+const BUTTERPOP_JS_PATH = 'butterpop.min.js'
+let butterpopInitPromise: Promise<void> | null = null
+
+export default defineNuxtPlugin(() => {
   if (import.meta.server) return
 
-  ButterPop.configure({ autoInject: false })
-
-  const { buildNpmUrl, getAvailableMirrors, config } = useCDN()
-  const { loadCSS, preloadResource } = useResourceLoader()
-
-  const version = '1.0.4'
-  const cssPath = `butterpop.min.css`
-
-  const primaryCss = buildNpmUrl('butterpop', version, cssPath)
-
-  const mirrors = getAvailableMirrors()
-  const mirrorsArr = Array.isArray(mirrors) ? mirrors : (typeof mirrors === 'string' && mirrors ? [mirrors] : [])
-  const npmTemplate = config.value?.npm?.template
-
-  const buildFromMirror = (mirror: string, path: string) => {
-    return npmTemplate
-      .replace('{{mirror}}', mirror)
-      .replace('{{package}}', 'butterpop')
-      .replace('{{version}}', version)
-      .replace('{{path}}', path)
+  if (butterpopInitPromise) {
+    return butterpopInitPromise
   }
 
-  const cssFallbacks = mirrorsArr.map(m => buildFromMirror(m, cssPath))
+  butterpopInitPromise = (async () => {
+    const { buildGithubUrl } = useCDN()
+    const { loadScript, preloadResource } = useResourceLoader()
 
-  preloadResource(primaryCss, 'style')
+    const jsUrl = buildGithubUrl(BUTTERPOP_GH_OWNER, BUTTERPOP_GH_REPO, BUTTERPOP_GH_BRANCH, BUTTERPOP_JS_PATH)
 
-  await loadCSS(primaryCss, { fallbackUrls: cssFallbacks, maxRetries: 2, retryDelay: 800, timeout: 5000 })
+    preloadResource(jsUrl, 'script')
+
+    await loadScript(jsUrl, { maxRetries: 2, retryDelay: 800, timeout: 5000 })
+
+    if (typeof window !== 'undefined' && (window as any).ButterPop && typeof (window as any).ButterPop.configure === 'function') {
+      ;(window as any).ButterPop.configure({ autoInject: false })
+    }
+  })()
+
+  return butterpopInitPromise
 })
