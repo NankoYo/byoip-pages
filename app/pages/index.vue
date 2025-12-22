@@ -75,6 +75,8 @@
 </template>
 
 <script setup lang="ts">
+import type { ServicesConfig } from '~/types'
+
 const { finalText, textClasses } = useResponsiveText({
   zh: '本优选免费，你如果付费的你被骗了',
   en: 'This is the preferred free option. If you paid, you\'ve been scammed.'
@@ -106,7 +108,7 @@ const copyText = () => {
 
 // 使用运行时配置
 const runtimeConfig = useRuntimeConfig()
-const services = computed(() => (runtimeConfig.public.appConfig as any)?.services || { services: [] })
+const services = computed<ServicesConfig>(() => (runtimeConfig.public.appConfig as any)?.services || { services: [] })
 const isLoaded = computed(() => {
   const cfg = runtimeConfig.public.appConfig as any
   return !!(
@@ -138,11 +140,11 @@ const reloadServices = () => {
 }
 
 const activeServicesCount = computed(() => {
-  return services.value?.services?.filter(service => service.status === 'active').length || 0
+  return services.value.services.filter(service => service.status === 'active').length
 })
 
 const maintenanceServicesCount = computed(() => {
-  return services.value?.services?.filter(service => service.status === 'maintenance').length || 0
+  return services.value.services.filter(service => service.status === 'maintenance').length
 })
 
 useHead({

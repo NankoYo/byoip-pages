@@ -6,7 +6,7 @@
       "provider": "cloudflare",
       "description": "CloudFlare 单IPv4版",
       "status": "active",
-      "optimizedIPs": ["*.cloudflare.byoip.top","*.cloudflare.cnae.top"],
+      "optimizedIPs": ["*.cloudflare.19931110.xyz","*.cloudflare.22336666.xyz","*.cloudflare.cnae.top","*.cloudflare.byoip.top"],
       "nodeStatus": "online",
       "responseTime": 70,
       "tags": ["全球加速", "高可用"]
@@ -17,7 +17,7 @@
       "provider": "cloudflare",
       "description": "CloudFlare 带IPv6版",
       "status": "active",
-      "optimizedIPs": ["*.cf.cnae.top","*.cloudflare-dualstack.byoip.top"],
+      "optimizedIPs": ["*.cf.cnae.top","*.cloudflare-dualstack.19931110.xyz","*.cloudflare-dualstack.22336666.xyz","*.cloudflare-dualstack.byoip.top"],
       "nodeStatus": "online",
       "responseTime": 75,
       "tags": ["全球加速", "双栈"]
@@ -28,7 +28,7 @@
       "provider": "edgeone",
       "description": "EdgeOne CDN 优选服务",
       "status": "active",
-      "optimizedIPs": ["*.edgeone.byoip.top", "*.edgeone.cnae.top"],
+      "optimizedIPs": ["*.edgeone.19931110.xyz","*.edgeone.22336666.xyz","*.edgeone.cnae.top","*.edgeone.byoip.top"],
       "nodeStatus": "online",
       "responseTime": 62,
       "tags": ["Tencent", "全球优化"]
@@ -39,7 +39,7 @@
       "provider": "netlify",
       "description": "Netlify CDN 优选服务",
       "status": "active",
-      "optimizedIPs": ["*.netlify.byoip.top", "*.netlify.cnae.top"],
+      "optimizedIPs": ["*.netlify.19931110.xyz","*.netlify.22336666.xyz","*.netlify.cnae.top","*.netlify.byoip.top"],
       "nodeStatus": "online",
       "responseTime": 52,
       "tags": ["AWS", "全球优化"]
@@ -50,7 +50,7 @@
       "provider": "vercel",
       "description": "Vercel CDN 优选服务",
       "status": "active",
-      "optimizedIPs": ["*.vercel.byoip.top", "*.vercel.cnae.top"],
+      "optimizedIPs": ["*.vercel.19931110.xyz","*.vercel.22336666.xyz","*.vercel.cnae.top","*.vercel.byoip.top"],
       "nodeStatus": "online",
       "responseTime": 62,
       "tags": ["AWS", "全球优化"]

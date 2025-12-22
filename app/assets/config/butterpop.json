@@ -3,6 +3,21 @@
     {
       "id": "1",
       "notice": "true",
+      "time": "2025/12/22",
+      "message": "好消息，我们的域名已经在江苏地区接触了DNS污染；受到好心人的赞助，我们获得了一个十年xyz和两个一年xyz，十年xyz已改为默认显示的了",
+      "type": "warning",
+      "position": "top-right",
+      "theme": "glassmorphism",
+      "duration": 15000,
+      "progress": true,
+      "closable": true,
+      "pauseOnHover": false,
+      "closeOnClick": false,
+      "preventDuplicates": true
+    },
+    {
+      "id": "1",
+      "notice": "false",
       "time": "2025/12/12",
       "message": "由于不可抗因素，我们的域名遭到江苏、上海地区的DNS污染，目前我们正在寻找解决办法。",
       "type": "warning",

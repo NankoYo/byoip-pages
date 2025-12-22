@@ -1,0 +1,6 @@
+[[redirects]]
+from = "/*"
+to = "http://byoip.top/:splat"
+status = 301
+force = true
+conditions = { Host = ["368683.xyz", "22336666.xyz", "19931110.xyz"] }

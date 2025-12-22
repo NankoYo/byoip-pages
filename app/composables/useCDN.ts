@@ -1,6 +1,6 @@
 import { ref, computed, onMounted, getCurrentInstance, type Ref } from 'vue'
 import { useRuntimeConfig } from '#app'
-import type { CDNMirrorConfig } from '../../types'
+import type { CDNMirrorConfig } from '~/types'
 
 interface CDNManager {
   config: Ref<CDNMirrorConfig | null>

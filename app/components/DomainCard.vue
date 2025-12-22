@@ -157,11 +157,10 @@ const handleClickOutside = (event: MouseEvent) => {
 }
 
 onMounted(() => {
-  if (props.service.id && domainPreferences.value[props.service.id] !== undefined) {
-    const savedIndex = domainPreferences.value[props.service.id]
-    if (savedIndex >= 0 && savedIndex < props.service.optimizedIPs.length) {
-      selectedIpIndex.value = savedIndex
-    }
+  const serviceId = props.service.id
+  const savedIndex = serviceId ? domainPreferences.value[serviceId] : undefined
+  if (typeof savedIndex === 'number' && savedIndex >= 0 && savedIndex < props.service.optimizedIPs.length) {
+    selectedIpIndex.value = savedIndex
   }
   document.addEventListener('click', handleClickOutside)
 })
@@ -176,7 +175,7 @@ const toggleDropdown = () => {
 
 const currentIp = computed(() => {
   if (!props.service.optimizedIPs || props.service.optimizedIPs.length === 0) return ''
-  return props.service.optimizedIPs[selectedIpIndex.value] || props.service.optimizedIPs[0]
+  return props.service.optimizedIPs[selectedIpIndex.value] ?? props.service.optimizedIPs[0] ?? ''
 })
 
 const handleSwitch = (index: number) => {

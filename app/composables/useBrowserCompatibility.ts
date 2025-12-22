@@ -49,27 +49,27 @@ export const useBrowserCompatibility = (): BrowserCompatibilityManager => {
     if (ua.includes('Chrome') && !ua.includes('Edg')) {
       name = 'Chrome'
       const match = ua.match(/Chrome\/(\d+)/)
-      version = match ? match[1] : 'Unknown'
+      version = match?.[1] ?? 'Unknown'
       engine = 'Blink'
     } else if (ua.includes('Firefox')) {
       name = 'Firefox'
       const match = ua.match(/Firefox\/(\d+)/)
-      version = match ? match[1] : 'Unknown'
+      version = match?.[1] ?? 'Unknown'
       engine = 'Gecko'
     } else if (ua.includes('Safari') && !ua.includes('Chrome')) {
       name = 'Safari'
       const match = ua.match(/Version\/(\d+)/)
-      version = match ? match[1] : 'Unknown'
+      version = match?.[1] ?? 'Unknown'
       engine = 'WebKit'
     } else if (ua.includes('Edg')) {
       name = 'Edge'
       const match = ua.match(/Edg\/(\d+)/)
-      version = match ? match[1] : 'Unknown'
+      version = match?.[1] ?? 'Unknown'
       engine = 'Blink'
     } else if (ua.includes('MSIE') || ua.includes('Trident')) {
       name = 'Internet Explorer'
       const match = ua.match(/(?:MSIE |rv:)(\d+)/)
-      version = match ? match[1] : 'Unknown'
+      version = match?.[1] ?? 'Unknown'
       engine = 'Trident'
     }
 
