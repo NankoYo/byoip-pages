@@ -20,10 +20,26 @@ export default defineNuxtPlugin(() => {
     const { loadScript, preloadResource } = useResourceLoader()
 
     const jsUrl = buildGithubUrl(BUTTERPOP_GH_OWNER, BUTTERPOP_GH_REPO, BUTTERPOP_GH_BRANCH, BUTTERPOP_JS_PATH)
+    const cssUrl = buildGithubUrl(BUTTERPOP_GH_OWNER, BUTTERPOP_GH_REPO, BUTTERPOP_GH_BRANCH, 'butterpop.css')
 
     preloadResource(jsUrl, 'script')
+    preloadResource(cssUrl, 'style')
 
     await loadScript(jsUrl, { maxRetries: 2, retryDelay: 800, timeout: 5000 })
+
+    if (typeof document !== 'undefined') {
+      const existingCorrect = document.querySelector(`link[data-butterpop-css][href="${cssUrl}"]`)
+      if (!existingCorrect) {
+        document.querySelectorAll('link[data-butterpop-css]').forEach(el => el.parentNode?.removeChild(el))
+        document.querySelectorAll('style[data-butterpop-css]').forEach(el => el.parentNode?.removeChild(el))
+
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = cssUrl
+        link.setAttribute('data-butterpop-css', 'true')
+        document.head.appendChild(link)
+      }
+    }
 
     if (typeof window !== 'undefined' && (window as any).ButterPop && typeof (window as any).ButterPop.configure === 'function') {
       ;(window as any).ButterPop.configure({ autoInject: false })
