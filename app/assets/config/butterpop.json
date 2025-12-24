@@ -5,7 +5,7 @@
       "notice": "true",
       "time": "2025/12/22",
       "message": "好消息，我们的域名已经在江苏地区接触了DNS污染；受到好心人的赞助，我们获得了一个十年xyz和两个一年xyz，十年xyz已改为默认显示的了",
-      "type": "warning",
+      "type": "success",
       "position": "top-right",
       "theme": "glassmorphism",
       "duration": 15000,

@@ -6,12 +6,7 @@
         <span class="text-sm md:text-base">
           Copyright &copy; {{ currentYear }} NB 优选服务
         </span>
-        <!-- 导航链接（可选） -->
         <nav>
-          <!-- 这部分由copilot修改 -->
-          <!-- <NuxtLink v-for="link in footerLinks" :key="link.href" :to="link.href" class="text-sm hover:text-blue-600 transition-colors duration-200">
-            {{ link.label }}
-          </NuxtLink> -->
           <span class="flex items-center gap-2 leading-tight">
             Powered By <a href="https://nuxt.com" class="text-blue-600"> <img :src="nuxtIcon" alt="Nuxt" class="w-auto h-4" /></a>
             
