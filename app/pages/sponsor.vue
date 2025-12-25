@@ -13,19 +13,19 @@
           <h2 class="text-3xl font-bold text-center mb-8 font-mixed text-green-600">
             支持我们
           </h2>
-          <div class="bg-green-50 border border-green-200 rounded-lg p-8">
-            <p class="text-center text-green-800 mb-8 text-lg">
+          <div class="bg-green-50 border border-green-200 rounded-lg p-4 sm:p-8">
+            <p class="text-center text-green-800 mb-6 sm:mb-8 text-base sm:text-lg">
               如果您觉得我们的服务对您有帮助，欢迎通过以下方式支持我们的项目发展
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <!-- 支付宝 -->
               <div class="text-center">
                 <h3 class="text-xl font-semibold mb-4 text-green-700">支付宝</h3>
-                <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-sm">
                   <img 
                     src="https://cdn.mfawa.top/image/icon/byoip-alipay.png" 
                     alt="支付宝收款码"
-                    class="w-80 h-80 mx-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
+                    class="w-64 h-64 sm:w-80 sm:h-80 mx-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
                     loading="lazy"
                     @click="openImageModal('https://cdn.mfawa.top/image/icon/byoip-alipay.png', '支付宝收款码')"
                   />
@@ -36,11 +36,11 @@
               <!-- 微信 -->
               <div class="text-center">
                 <h3 class="text-xl font-semibold mb-4 text-green-700">微信</h3>
-                <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="bg-white rounded-lg p-4 sm:p-6 shadow-sm">
                   <img 
                     src="https://cdn.mfawa.top/image/icon/byoip-wechat.png" 
                     alt="微信赞助"
-                    class="w-80 h-80 mx-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
+                    class="w-64 h-64 sm:w-80 sm:h-80 mx-auto object-contain cursor-pointer hover:scale-105 transition-transform duration-200"
                     loading="lazy"
                     @click="openImageModal('https://cdn.mfawa.top/image/icon/byoip-wechat.png', '微信赞助')"
                   />
@@ -48,7 +48,7 @@
                 </div>
               </div>
             </div>
-            <p class="text-center text-green-700 text-lg mt-6">
+            <p class="text-center text-green-700 text-base sm:text-lg mt-6">
               您的每一份支持都是我们前进的动力 ❤️
             </p>
           </div>
@@ -92,8 +92,8 @@
             :key="sponsor.id"
             class="bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow duration-200 p-4"
           >
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-center space-x-4 min-w-0">
                 <ImageLoader
                   :src="sponsor.logo"
                   :alt="`${sponsor.name} logo`"
@@ -101,12 +101,12 @@
                   container-class="h-12 w-16 flex-shrink-0"
                   image-class="h-12 w-auto object-contain"
                 />
-                <div>
+                <div class="min-w-0">
                   <h3 class="text-lg font-semibold font-mixed">{{ sponsor.name }}</h3>
-                  <p class="text-gray-600 text-sm">{{ sponsor.description }}</p>
+                  <p class="text-gray-600 text-sm break-words">{{ sponsor.description }}</p>
                 </div>
               </div>
-              <div class="flex items-center space-x-4">
+              <div class="flex items-center space-x-4 justify-between sm:justify-end">
                 <span v-if="sponsor.amount" class="text-green-600 font-semibold">
                   {{ sponsor.amount }}
                 </span>
@@ -150,8 +150,8 @@
         >
           ×
         </button>
-        <div class="bg-white rounded-lg p-4 shadow-2xl">
-          <img :src="modalImage.src" :alt="modalImage.alt" class="w-[600px] h-[600px] object-contain"/>
+        <div class="bg-white rounded-lg p-2 sm:p-4 shadow-2xl">
+          <img :src="modalImage.src" :alt="modalImage.alt" class="max-w-[90vw] max-h-[80vh] w-auto h-auto object-contain"/>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-200">
-    <div class="flex items-center justify-between mb-4">
+  <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 sm:p-6 border border-gray-200">
+    <div class="flex items-start sm:items-center justify-between mb-4 gap-3">
       <div class="flex items-center space-x-3">
         <div class="flex-shrink-0">
           <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
@@ -9,7 +9,7 @@
           </div>
         </div>
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 font-mixed">{{ service.name }}</h3>
+          <h3 class="text-base sm:text-lg font-semibold text-gray-900 font-mixed">{{ service.name }}</h3>
           <p class="text-sm text-gray-500">{{ service.provider.toUpperCase() }}</p>
         </div>
       </div>
@@ -26,7 +26,7 @@
 
     <p class="text-gray-600 text-sm mb-4 font-chinese">{{ service.description }}</p>
 
-    <div class="flex items-center justify-between mb-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
       <div class="flex items-center space-x-2">
         <div class="w-2 h-2 rounded-full" :class="getNodeStatusColor(service.nodeStatus)"></div>
         <span class="text-sm text-gray-600">节点状态: {{ getNodeStatusText(service.nodeStatus) }}</span>
@@ -40,10 +40,10 @@
       <h4 class="text-sm font-medium text-gray-700 mb-2">优选 IP 地址:</h4>
       <div v-if="service.optimizedIPs.length <= 1" class="space-y-2">
         <div v-for="(ip, index) in service.optimizedIPs" :key="index" 
-             class="flex items-center justify-between bg-gray-50 rounded px-3 py-2">
-          <span class="text-sm font-mono text-gray-800 font-mixed">{{ ip }}</span>
+             class="flex items-center justify-between bg-gray-50 rounded px-3 py-2.5">
+          <span class="text-sm font-mono text-gray-800 font-mixed truncate">{{ ip }}</span>
           <button @click="copyToClipboard(ip)" 
-                  class="text-blue-600 hover:text-blue-800 text-xs font-medium transition-colors"
+                  class="text-blue-600 hover:text-blue-800 text-xs font-medium transition-colors px-2 py-1"
                   :class="{ 'text-green-600': copiedIP === ip }">
             {{ copiedIP === ip ? '已复制' : '复制' }}
           </button>

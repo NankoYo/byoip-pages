@@ -13,7 +13,7 @@
     </div>
     
     <!-- 赞助商logo -->
-    <div class="px-6 pb-4">
+    <div class="px-4 sm:px-6 pb-4">
       <div class="flex justify-center mb-4">
         <ImageLoader
           :src="sponsor.logo"
@@ -47,7 +47,7 @@
           :href="sponsor.website"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-md transition-colors duration-200"
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-md transition-colors duration-200 w-full sm:w-auto justify-center"
           :class="getLevelButtonStyles(sponsor.level || 'silver')"
         >
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
