@@ -108,5 +108,5 @@ byoip-pages/
 
 ## 联系
 
-- 邮箱：me@imbee.top
+- 邮箱：me@1s.fan
 - QQ：3979158171

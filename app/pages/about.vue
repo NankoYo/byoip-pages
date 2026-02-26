@@ -28,7 +28,7 @@
           </p>
           <ul class="list-disc pl-6 mt-2">
             <li>GitHub: <a href="https://github.com/FrecklyComb1728/byoip-pages" class="text-blue-600 hover:text-blue-800">FrecklyComb1728/byoip-pages</a></li>
-            <li>Email: me@imbee.top</li>
+            <li>Email: me@1s.fan</li>
             <li>QQ：3979158171</li>
           </ul>
         </div>
